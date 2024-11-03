@@ -1,0 +1,26 @@
+
+
+
+a:link, a:visited { 
+  text-decoration: underline;
+  cursor: auto;
+}
+
+a:link:active, a:visited:active { 
+  color: (internal value);
+}
+
+
+
+			.img-wrap, h1{
+				text-align: center;
+			
+			}
+			.img-wrap a img{
+ 					display:block;
+			}
+			.img-wrap > a{
+ 					display:inline-block;
+ 					vertical-align: middle;
+ 				
+			}
