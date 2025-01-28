@@ -81,8 +81,8 @@ Here are some key points:
 
 \subsection*{Exact sequences} An \emph{exact seqeunce} of $R$-modules is 
 a (finite or infinite) collection of modules and maps
-\[ \cdots  \rightarrow M_{i-1} \xrightarrow{d_{i-1}} M_{i} \xrightarrow{d_{i}} M_{i+1} \rightarrow \cdots\]
-such that the kernel of any map $d_{i}$ is equal to the image of the previous map $d_{i-1}$. Special examples are \emph{short exact sequences}: exact sequences of the form
+\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
+such that the kernel of any map  $d_{i}$  ``out'' of a module is equal to the image of the previous map $d_{i+1}$ ``in'' to the module. Special examples are \emph{short exact sequences}: exact sequences of the form
 \[ 0  \rightarrow L \xrightarrow{\alpha} M \xrightarrow{\beta} N \rightarrow 0\]
 the definition of exact in this case says that $\alpha$ is injective, $\beta$ is surjective, and $N\cong M/L$.
 
@@ -95,15 +95,15 @@ The main tricks to beware of in exact sequences are:
 \end{itemize}
 
 
-\subsection*{Complexes and homology} A \emph{complex} of $R$-modules weakening of exact sequence: a complex is a (finite or infinite) collection of modules and maps
-\[ \cdots  \rightarrow M_{i-1} \xrightarrow{d_{i-1}} M_{i} \xrightarrow{d_{i}} M_{i+1} \rightarrow \cdots\]
+\subsection*{Complexes and homology} A \emph{complex} of $R$-modules is a weakening of exact sequence: a complex is a (finite or infinite) collection of modules and maps
+\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
 such that the composition of any two maps in a row is zero.
 
-The $i$th \emph{homology} or \emph{cohomology} (you can think of these words as interchangable at first) of the complex above is the module $\ker(d_i)/\mathrm{im}(d_{i-1})$.
+The $i$th \emph{homology} or \emph{cohomology} (you can think of these words as interchangable at first) of the complex above is the module $\ker(d_i)/\mathrm{im}(d_{i+1})$; that is, the kernel of the map ``out'' modulo the image of the map ``in''.
 
 \subsection*{Free resolutions} A \emph{free resolution} of an $R$-module $M$ is a (finite or infinite) exact sequence of the form
 \[ \cdots\to  R^{b_2} \rightarrow R^{b_1} \rightarrow R^{b_0}(  \rightarrow M) \to 0\]
-for some $b_i$ (also possibly infinite).
+for some $b_i$ (also possibly infinite). 
 
 \subsection*{Tensor products} The \emph{tensor product} of two $R$-modules $M$ and $N$ is another module $M\otimes_R N$ that satisfies a particular universal property. The key examples of tensor products are
 \begin{itemize} 
