@@ -101,13 +101,13 @@ such that the composition of any two maps in a row is zero.
 
 The $i$th \emph{homology} or \emph{cohomology} (you can think of these words as interchangable at first) of the complex above is the module $\ker(d_i)/\mathrm{im}(d_{i-1})$.
 
-\subsection*{Free resolutions} A \emph{free resolution} of n $R$-module $M$ is a (finite or infinite) exact sequence of the form
+\subsection*{Free resolutions} A \emph{free resolution} of an $R$-module $M$ is a (finite or infinite) exact sequence of the form
 \[ \cdots\to  R^{b_2} \rightarrow R^{b_1} \rightarrow R^{b_0}(  \rightarrow M) \to 0\]
 for some $b_i$ (also possibly infinite).
 
 \subsection*{Tensor products} The \emph{tensor product} of two $R$-modules $M$ and $N$ is another module $M\otimes_R N$ that satisfies a particular universal property. The key examples of tensor products are
 \begin{itemize} 
-\item $R/I \otimes_R R/J = R/(I+J)$
+\item $R/I \otimes_R R/J = R/(I+J)$.
 \item If $S$ is an $R$-algebra and $M$ is an $R$-module with presentation matrix $B$, then $S\otimes_R M$ is the $S$-module with presentation matrix $B$ (image of $B$ in $S$).
 \end{itemize}
 
@@ -116,11 +116,11 @@ for some $b_i$ (also possibly infinite).
 \[ \cdots \to \mathrm{Ext}^i_R(M,N') \to \mathrm{Ext}^i_R(M,N) \to \mathrm{Ext}^i_R(M,N'') \to \mathrm{Ext}^{i+1}_R(M,N') \to \cdots\]
 Also, $\mathrm{Ext}^0_R(M,N)=\mathrm{Hom}_R(M,N)$, the module of $R$-linear homomorphisms from $M$ to $N$.
 
-There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, computing the module of homomorphisms into $N$ at each step to get a complex, and taking the homologies.
+There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, tensoring with $N$ at each step to get a complex, and taking the homologies.
 One of the main tricks with $\mathrm{Tor}$ is that given a short exact sequence ${0\to N' \to N \to N'' \to 0}$, there is a long exact sequence
 \[ \cdots \to \mathrm{Tor}_i^R(M,N') \to \mathrm{Tor}_i^R(M,N) \to \mathrm{Tor}_i^R(M,N'') \to \mathrm{Tor}_i^R(M,N') \to \cdots\]
 The other main trick with $\mathrm{Tor}$ is that $\mathrm{Tor}_i^R(M,N)\cong \mathrm{Tor}_i^R(N,M)$.
-
+Also, $\mathrm{Tor}^0_R(M,N)=M\otimes_R N$.
 
 
 	
