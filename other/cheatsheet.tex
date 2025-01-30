@@ -3,7 +3,7 @@
 
 \usepackage{times}
 \usepackage[margin=0.8in]{geometry}
-\usepackage{amsmath,amssymb,multicol,graphicx,framed,ifthen,color,xcolor,stmaryrd,enumitem,colonequals}
+\usepackage{amsmath,amssymb,multicol,graphicx,framed,ifthen,color,xcolor,stmaryrd,enumitem,colonequals,comment}
 
 
 
@@ -46,8 +46,53 @@
 	
 \section*{Cheat sheet}
 
-This is a \emph{listeners} guide to basic topics from Homological Algebra and Commutative Algebra \textsc{II} that appear in seminar. The only purpose of this is so that you might get a better chance of understanding the big picture of a talk that uses these concepts.
+This is a \emph{listener's} guide to basic topics from Homological Algebra and Commutative Algebra \textsc{II} that appear in seminar. The only purpose of this is so that you might get a better chance of understanding the big picture of a talk that uses these concepts.
 
+
+
+\subsection*{Regular rings} When you hear \emph{regular}, for most purposes you should think of localization of a polynomial ring or a power series ring. A Noetherian local ring $(R,\m,k)$ is \emph{regular} if $\dim(R) = \dim_{k}(\m/\m^2)$. Note that the inequality $\leq$ always holds by Krull height and NAK. A not-necessarily-local Noetherian ring is \emph{regular} if all of its localizations are. The basic examples are
+\begin{itemize}
+\item $K[X_1,\dots,X_n]$ is regular for a field $K$.
+\item $K\llbracket X_1,\dots,X_n\rrbracket$ is regular for a field $K$.
+\end{itemize}
+
+
+\subsection*{Exact sequences} An \emph{exact seqeunce} of $R$-modules is 
+a (finite or infinite) collection of modules and maps
+\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
+such that the kernel of any map  $d_{i}$  ``out'' of a module is equal to the image of the previous map $d_{i+1}$ ``in'' to the module. Special examples are \emph{short exact sequences}: exact sequences of the form
+\[ 0  \rightarrow L \xrightarrow{\alpha} M \xrightarrow{\beta} N \rightarrow 0\]
+the definition of exact in this case says that $\alpha$ is injective, $\beta$ is surjective, and $N\cong M/L$.
+
+The main tricks to beware of in exact sequences are:
+\begin{itemize}
+\item if $\cdots \to  0 \to M \to 0 \to \cdots$ occurs, then $M=0$.
+\item if $\cdots \to  0 \to M \to N \to 0 \to \cdots$ occurs, then $M\cong N$.
+\item if $\cdots \to  0 \to M \xrightarrow{\alpha} N \to \cdots$ occurs, then $\alpha$ is injective.
+\item if $\cdots \to  M \xrightarrow{\beta} N \to 0 \to  \cdots$ occurs, then $\beta$ is surjective.
+\end{itemize}
+
+
+\subsection*{Complexes and homology} A \emph{complex} of $R$-modules is a weakening of exact sequence: a complex is a (finite or infinite) collection of modules and maps
+\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
+such that the composition of any two maps in a row is zero.
+
+The $i$th \emph{homology} or \emph{cohomology} (you can think of these words as interchangable at first) of the complex above is the module $\ker(d_i)/\mathrm{im}(d_{i+1})$; that is, the kernel of the map ``out'' modulo the image of the map ``in''.
+
+\subsection*{Free resolutions} A \emph{free resolution} of an $R$-module $M$ is a (finite or infinite) exact sequence of the form
+\[ \cdots\to  R^{b_2} \rightarrow R^{b_1} \rightarrow R^{b_0}(  \rightarrow M) \to 0\]
+for some $b_i$ (also possibly infinite). 
+
+
+
+\subsection*{Ext} To any pair $M,N$ of $R$-modules, there is a sequence of $\mathrm{Ext}$ modules $\mathrm{Ext}^i_R(M,N)$. In short, they are defined by taking a free resolution of $M$, computing the module of homomorphisms into $N$ at each step to get a complex, and taking the homologies. One of the main tricks with $\mathrm{Ext}$ is that given a short exact sequence $0\to N' \to N \to N'' \to 0$, there is a long exact sequence
+\[ \cdots \to \mathrm{Ext}^i_R(M,N') \to \mathrm{Ext}^i_R(M,N) \to \mathrm{Ext}^i_R(M,N'') \to \mathrm{Ext}^{i+1}_R(M,N') \to \cdots\]
+Also, $\mathrm{Ext}^0_R(M,N)=\mathrm{Hom}_R(M,N)$, the module of $R$-linear homomorphisms from $M$ to $N$.
+
+
+
+
+	\begin{comment}
 \subsection*{Equal / mixed characteristic} A local ring $(R,\m,k)$ has:
 \begin{itemize}
 \item \textit{equal characteristic zero} if $\mathrm{char}(R)=\mathrm{char}(k)=0$
@@ -55,14 +100,6 @@ This is a \emph{listeners} guide to basic topics from Homological Algebra and Co
 \item \textit{mixed characteristic $(0,p)$} if $\mathrm{char}(R)=0$ and $\mathrm{char}(k)=p$ for some prime $p>0$.
 \end{itemize}
 Any \emph{reduced} local ring satisfies one of the three conditions above; \emph{any} local ring satisfies one of the above or $\mathrm{char}(R)=p^n$ and $\mathrm{char}(k)=p$ for some prime $p$ and $n>1$.
-
-
-\subsection*{Regular rings} When you hear \emph{regular}, you should think of localization of a polynomial ring or a power series ring. A Noetherian local ring $(R,\m,k)$ is \emph{regular} if $\dim(R) = \dim_{k-\text{vectorspace}}(\m/\m^2)$. Note that the inequality $\leq$ always holds by Krull height and NAK. A not-necessarily-local Noetherian ring is \emph{regular} if all of its localizations are. The basic examples are
-\begin{itemize}
-\item $K[X_1,\dots,X_n]$ is regular for a field $K$.
-\item $K\llbracket X_1,\dots,X_n\rrbracket$ is regular for a field $K$.
-\end{itemize}
-
 
 
 \subsection*{Complete / completion} When you hear \emph{complete}, you should think of quotient of power series ring: the quintessential example of a complete local ring is $K\llbracket X_1,\dots,X_n \rrbracket / I$ for some field $K$ and ideal $I$.
@@ -79,32 +116,6 @@ Here are some key points:
 
 
 
-\subsection*{Exact sequences} An \emph{exact seqeunce} of $R$-modules is 
-a (finite or infinite) collection of modules and maps
-\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
-such that the kernel of any map  $d_{i}$  ``out'' of a module is equal to the image of the previous map $d_{i+1}$ ``in'' to the module. Special examples are \emph{short exact sequences}: exact sequences of the form
-\[ 0  \rightarrow L \xrightarrow{\alpha} M \xrightarrow{\beta} N \rightarrow 0\]
-the definition of exact in this case says that $\alpha$ is injective, $\beta$ is surjective, and $N\cong M/L$.
-
-The main tricks to beware of in exact sequences are:
-\begin{itemize}
-\item if $\cdots \to  0 \to M \to 0 \to \cdots$ appears, then $M=0$.
-\item if $\cdots \to  0 \to M \to N \to 0 \to \cdots$ appears, then $M\cong N$.
-\item if $\cdots \to  0 \to M \xrightarrow{\alpha} N \to \cdots$ appears, then $\alpha$ is injective.
-\item if $\cdots \to  M \xrightarrow{\beta} N \to 0 \to  \cdots$ appears, then $\beta$ is surjective.
-\end{itemize}
-
-
-\subsection*{Complexes and homology} A \emph{complex} of $R$-modules is a weakening of exact sequence: a complex is a (finite or infinite) collection of modules and maps
-\[ \cdots  \rightarrow M_{i+1} \xrightarrow{d_{i+1}} M_{i} \xrightarrow{d_{i}} M_{i-1} \rightarrow \cdots\]
-such that the composition of any two maps in a row is zero.
-
-The $i$th \emph{homology} or \emph{cohomology} (you can think of these words as interchangable at first) of the complex above is the module $\ker(d_i)/\mathrm{im}(d_{i+1})$; that is, the kernel of the map ``out'' modulo the image of the map ``in''.
-
-\subsection*{Free resolutions} A \emph{free resolution} of an $R$-module $M$ is a (finite or infinite) exact sequence of the form
-\[ \cdots\to  R^{b_2} \rightarrow R^{b_1} \rightarrow R^{b_0}(  \rightarrow M) \to 0\]
-for some $b_i$ (also possibly infinite). 
-
 \subsection*{Tensor products} The \emph{tensor product} of two $R$-modules $M$ and $N$ is another module $M\otimes_R N$ that satisfies a particular universal property. The key examples of tensor products are
 \begin{itemize} 
 \item $R/I \otimes_R R/J = R/(I+J)$.
@@ -112,24 +123,13 @@ for some $b_i$ (also possibly infinite).
 \end{itemize}
 
 
-\subsection*{Ext and Tor} To any pair $M,N$ of $R$-modules, there is a sequence of $\mathrm{Ext}$ modules $\mathrm{Ext}^i_R(M,N)$. In short, they are defined by taking a free resolution of $M$, computing the module of homomorphisms into $N$ at each step to get a complex, and taking the homologies. One of the main tricks with $\mathrm{Ext}$ is that given a short exact sequence $0\to N' \to N \to N'' \to 0$, there is a long exact sequence
-\[ \cdots \to \mathrm{Ext}^i_R(M,N') \to \mathrm{Ext}^i_R(M,N) \to \mathrm{Ext}^i_R(M,N'') \to \mathrm{Ext}^{i+1}_R(M,N') \to \cdots\]
-Also, $\mathrm{Ext}^0_R(M,N)=\mathrm{Hom}_R(M,N)$, the module of $R$-linear homomorphisms from $M$ to $N$.
-
-There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, tensoring with $N$ at each step to get a complex, and taking the homologies.
+\subsection*{Tor} There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, tensoring with $N$ at each step to get a complex, and taking the homologies.
 One of the main tricks with $\mathrm{Tor}$ is that given a short exact sequence ${0\to N' \to N \to N'' \to 0}$, there is a long exact sequence
 \[ \cdots \to \mathrm{Tor}_i^R(M,N') \to \mathrm{Tor}_i^R(M,N) \to \mathrm{Tor}_i^R(M,N'') \to \mathrm{Tor}_i^R(M,N') \to \cdots\]
 The other main trick with $\mathrm{Tor}$ is that $\mathrm{Tor}_i^R(M,N)\cong \mathrm{Tor}_i^R(N,M)$.
 Also, $\mathrm{Tor}^0_R(M,N)=M\otimes_R N$.
 
-
-	
-
-
-
-
-
-
+\end{comment}
 
 
 
