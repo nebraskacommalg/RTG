@@ -99,8 +99,19 @@ Also, $\mathrm{Ext}^0_R(M,N)=\mathrm{Hom}_R(M,N)$, the module of $R$-linear homo
 Any \emph{reduced} local ring satisfies one of the three conditions above; \emph{any} local ring satisfies one of the above or $\mathrm{char}(R)=p^n$ and $\mathrm{char}(k)=p$ for some prime $p$ and $n>1$.
 
 
+\subsection*{Tensor products} The \emph{tensor product} of two $R$-modules $M$ and $N$ is another module $M\otimes_R N$ that satisfies a particular universal property. The key examples of tensor products are
+\begin{itemize} 
+\item $R/I \otimes_R R/J = R/(I+J)$.
+\item If $S$ is an $R$-algebra and $M$ is an $R$-module with presentation matrix $B$, then $S\otimes_R M$ is the $S$-module with presentation matrix $B$ (image of $B$ in $S$).
+\end{itemize}
 
-	\begin{comment}
+\subsection*{Tor} There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, tensoring with $N$ at each step to get a complex, and taking the homologies.
+One of the main tricks with $\mathrm{Tor}$ is that given a short exact sequence ${0\to N' \to N \to N'' \to 0}$, there is a long exact sequence
+\[ \cdots \to \mathrm{Tor}_i^R(M,N') \to \mathrm{Tor}_i^R(M,N) \to \mathrm{Tor}_i^R(M,N'') \to \mathrm{Tor}_i^R(M,N') \to \cdots\]
+The other main trick with $\mathrm{Tor}$ is that $\mathrm{Tor}_i^R(M,N)\cong \mathrm{Tor}_i^R(N,M)$.
+Also, $\mathrm{Tor}^0_R(M,N)=M\otimes_R N$.
+
+\begin{comment}
 
 
 \subsection*{Complete / completion} When you hear \emph{complete}, you should think of quotient of power series ring: the quintessential example of a complete local ring is $K\llbracket X_1,\dots,X_n \rrbracket / I$ for some field $K$ and ideal $I$.
@@ -117,18 +128,10 @@ Here are some key points:
 
 
 
-\subsection*{Tensor products} The \emph{tensor product} of two $R$-modules $M$ and $N$ is another module $M\otimes_R N$ that satisfies a particular universal property. The key examples of tensor products are
-\begin{itemize} 
-\item $R/I \otimes_R R/J = R/(I+J)$.
-\item If $S$ is an $R$-algebra and $M$ is an $R$-module with presentation matrix $B$, then $S\otimes_R M$ is the $S$-module with presentation matrix $B$ (image of $B$ in $S$).
-\end{itemize}
 
 
-\subsection*{Tor} There is a sequence of $\mathrm{Tor}$ modules $\mathrm{Tor}_i^R(M,N)$. In short, they are defined by taking a free resolution of $M$, tensoring with $N$ at each step to get a complex, and taking the homologies.
-One of the main tricks with $\mathrm{Tor}$ is that given a short exact sequence ${0\to N' \to N \to N'' \to 0}$, there is a long exact sequence
-\[ \cdots \to \mathrm{Tor}_i^R(M,N') \to \mathrm{Tor}_i^R(M,N) \to \mathrm{Tor}_i^R(M,N'') \to \mathrm{Tor}_i^R(M,N') \to \cdots\]
-The other main trick with $\mathrm{Tor}$ is that $\mathrm{Tor}_i^R(M,N)\cong \mathrm{Tor}_i^R(N,M)$.
-Also, $\mathrm{Tor}^0_R(M,N)=M\otimes_R N$.
+
+
 
 \end{comment}
 
