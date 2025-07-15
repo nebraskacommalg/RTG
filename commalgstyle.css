@@ -24,3 +24,57 @@ a:link:active, a:visited:active {
  					vertical-align: middle;
  				
 			}
+
+
+
+
+.profile1 {
+  width: 50%;
+  vertical-align:middle;
+}
+
+.profile2 {
+  width: 40%;
+  margin-right: 30px;
+  padding: 30px;
+  align-items: center;
+  text-align: justify;
+  vertical-align:middle;
+}
+
+
+
+.profile {
+	margin:auto;
+  	text-align:center;
+  	vertical-align:middle;
+   	display: flex;
+    	align-items: center;
+	width: 100%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+	.profile1 {
+  		width: 100%;
+		align-items: center;
+}
+
+	.profile2 {
+  		width: 100%;
+  		text-align: justify;
+		text-align-last: center;
+		padding: 20px;
+		text-size-adjust: none;
+}
+
+	.profile {
+		text-align: justify;
+		display: flex;
+    		flex-wrap: wrap;
+		flex-direction: column;
+		width: 100%;
+	}
+}
