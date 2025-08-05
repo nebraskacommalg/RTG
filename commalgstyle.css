@@ -84,8 +84,7 @@ text-align:left;
 
 
 
-
-@media screen and (max-width: 600px) {
+@media (max-width: 800px) {
 
 	.profile1 {
   		width: 100%;
@@ -124,10 +123,10 @@ text-align:left;
 }
 
 	.grads {
+		width: 100%;
 		text-align: justify;
 		display: flex;
     		flex-wrap: wrap;
 		flex-direction: column;
-		width: 100%;
 	}
 }
