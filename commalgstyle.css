@@ -110,14 +110,13 @@ text-align:left;
 
 	.profile1 {
   		width: 100%;
-		align-items: center;
+		align-items: left;
 }
 
 	.profile2 {
   		width: 100%;
   		text-align: justify;
 		text-align-last: center;
-		padding: 20px;
 		text-size-adjust: none;
 }
 
@@ -140,7 +139,6 @@ text-align:left;
   		width: 100%;
   		text-align: justify;
 		text-align-last: center;
-		padding: 20px;
 		text-size-adjust: none;
 }
 
@@ -165,6 +163,7 @@ text-align:left;
     }
 
 .video-container {
+    max-width: 90%; 
     padding-bottom: 60%; /* Adjust aspect ratio if needed for narrower screens */
   }
 
