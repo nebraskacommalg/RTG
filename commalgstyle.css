@@ -164,7 +164,35 @@ text-align:left;
 
 .video-container {
     max-width: 90%; 
-    padding-bottom: 60%; /* Adjust aspect ratio if needed for narrower screens */
+    padding-bottom: 60%;
   }
 
+}
+
+
+
+.postdocs {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 20px;
+}
+
+.postdoc {
+    text-align: center;
+}
+
+.postdoc-photo {
+    height: 200px;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    .postdocs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .postdoc-photo {
+        height: 150px;
+    }
 }
