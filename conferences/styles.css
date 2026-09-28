@@ -1,0 +1,55 @@
+/* Basic browser defaults matching the published page; no external libraries. */
+*,::before,::after { box-sizing:border-box; margin:0; padding:0; border:0 solid; }
+html { line-height:1.5; -webkit-text-size-adjust:100%; tab-size:4; }
+body { line-height:inherit; }
+h1,h2,h3,h4,h5,h6 { font-size:inherit; font-weight:inherit; }
+b,strong { font-weight:bolder; }
+ol,ul,menu { list-style:none; }
+img,svg { display:block; vertical-align:middle; max-width:100%; height:auto; }
+table { text-indent:0; border-color:inherit; border-collapse:collapse; }
+hr { height:0; color:inherit; }
+sub,sup { font-size:75%; line-height:0; position:relative; vertical-align:baseline; }
+sub { bottom:-.25em; }
+sup { top:-.5em; }
+
+:root { --cream:#f2eee4; --paper:#faf7f0; --ink:#151713; --muted:#66685f; --scarlet:#d00024; --line:#c8c3b7; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--cream); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+a { color:inherit; text-decoration:none; }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+.camp-page { max-width:1200px; margin:0 auto; padding:32px 48px 72px; background:#fff; min-height:100vh; color:#171717; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.55; }
+.camp-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:10px 28px; padding:15px 10px; border-top:1px solid #777; border-bottom:1px solid #777; font-weight:700; }
+.camp-nav a { text-decoration:underline; text-underline-offset:3px; }
+.camp-hero { text-align:center; padding:70px 20px 60px; }
+.camp-hero>p { margin:0 0 8px; text-transform:uppercase; letter-spacing:.2em; font-size:13px; }
+.camp-hero h1 { margin:0; font-family:Georgia,serif; color:#c8102e; font-size:clamp(62px,10vw,132px); line-height:.95; font-weight:400; }
+.camp-hero h2 { margin:24px 0 34px; font-family:Georgia,serif; font-weight:400; font-size:24px; }
+.camp-rule { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:24px 46px; max-width:780px; margin:0 auto; padding:30px 10px; border-top:1px solid #999; border-bottom:1px solid #999; color:#555; font-family:"Cambria Math","STIX Two Math",Georgia,serif; font-size:24px; }
+.camp-math { white-space:nowrap; line-height:1.5; }
+.camp-math-operator { font-style:normal; }
+.camp-math sub { font-size:.68em; line-height:0; vertical-align:-.3em; }
+.camp-math-scripts { display:inline-grid; grid-template-rows:1fr 1fr; margin-left:.04em; margin-right:.08em; vertical-align:middle; transform:translateY(-.1em); line-height:1; }
+.camp-math-scripts sup,.camp-math-scripts sub { position:static; font-size:.65em; line-height:1; text-align:left; }
+.camp-page section { scroll-margin-top:20px; margin:0 auto; padding:42px 0; max-width:980px; }
+.camp-page section+section { border-top:1px solid #aaa; }
+.camp-page section h3 { margin:0 0 22px; font-family:Georgia,serif; color:#c8102e; font-size:30px; font-weight:400; }
+.camp-page section p { margin:0 0 18px; }
+.camp-speakers { padding-left:24px; }
+.camp-speakers li { margin:9px 0; }
+.camp-speakers a,.camp-footer a { color:#9d001d; text-decoration:underline; }
+.camp-speakers span { color:#555; }
+.camp-portraits { display:flex; justify-content:center; margin-top:35px; }
+.camp-portraits figure { margin:0; }
+.camp-portraits img { display:block; width:266px; max-width:100%; height:auto; border:1px solid #999; }
+.camp-portraits figcaption { margin-top:6px; font-size:13px; text-align:center; }
+.camp-photo-credit { margin-top:18px!important; color:#666; font-size:13px; text-align:center; }
+.camp-page table { width:100%; margin-top:25px; border-collapse:collapse; }
+.camp-page th,.camp-page td { border:1px solid #888; padding:13px 16px; text-align:left; }
+.camp-page th { background:#eee; }
+.camp-page>hr { border:0; border-top:1px solid #777; }
+.camp-footer { text-align:center; }
+.camp-page section.camp-footer { border-top:0; }
+.camp-n { width:90px; height:90px; display:grid; place-items:center; margin:30px auto 18px; background:#c8102e; color:white; font-family:Georgia,serif; font-size:58px; }
+@media (max-width:650px) { .camp-page { padding:20px 22px 55px; font-size:16px; } .camp-nav { gap:8px 15px; font-size:14px; } .camp-hero { padding:50px 0 40px; } .camp-hero h1 { font-size:64px; } .camp-hero h2 { font-size:19px; } .camp-rule { display:grid; grid-template-columns:repeat(2,max-content); gap:20px 30px; font-size:21px; } .camp-portraits { flex-direction:column; align-items:center; } .camp-page th,.camp-page td { padding:10px; } }
